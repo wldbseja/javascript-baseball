@@ -27,7 +27,13 @@ class App {
     );
   }
 
-  callbackUserNumber(userinput) {}
+  convertNumberInput(userinput) {
+    return userinput.split('').map(Number);
+  }
+
+  callbackUserNumber(userinput) {
+    this.convertNumberInput(userinput);
+  }
 
   play() {
     if (!this.#computer) {
