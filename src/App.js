@@ -1,4 +1,10 @@
 const MissionUtils = require('@woowacourse/mission-utils');
+const {
+  NUMBER,
+  PRINT_STRING,
+  PRINT_ERROR_STRING,
+  PRINT_RESULT_COUNT,
+} = require('./constants');
 
 class App {
   #computer;
