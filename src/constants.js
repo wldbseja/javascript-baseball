@@ -11,6 +11,8 @@ const PRINT_ERROR_STRING = {
   ERROR_DUPLE: '[ERROR] 숫자가 중복 되어 프로그램이 종료 됩니다.',
   ERROR_LENGTH: '[ERROR] 3개의 숫자가 아니므로 프로그램이 종료 됩니다.',
   ERROR_RANGE: '[ERROR] 1부터 9까지의 숫자가 아니므로 프로그램이 종료 됩니다.',
+  EROOR_INPUT_GAME_RESTART:
+    '[Error] 알맞은 숫자가 아니므로 프로그램이 종료 됩니다.',
 };
 
 module.exports = {
