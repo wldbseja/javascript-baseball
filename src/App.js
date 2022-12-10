@@ -30,8 +30,16 @@ class App {
   convertNumberInput(userinput) {
     return userinput.split('').map(Number);
   }
+  checkNumberCount(userNumber) {
+    const setUserNumber = new Set(userNumber);
+    if (setUserNumber.size < 3) {
+      throw Error('[ERROR] 숫자가 중복 되어 프로그램이 종료 됩니다.');
+    }
+  }
 
-  checkUserNumber(userNumber) {}
+  checkUserNumber(userNumber) {
+    this.checkNumberCount(userNumber);
+  }
 
   callbackUserNumber(userinput) {
     const userNumber = this.convertNumberInput(userinput);
