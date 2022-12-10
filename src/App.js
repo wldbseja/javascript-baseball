@@ -31,8 +31,11 @@ class App {
     return userinput.split('').map(Number);
   }
 
+  checkUserNumber(userNumber) {}
+
   callbackUserNumber(userinput) {
-    this.convertNumberInput(userinput);
+    const userNumber = this.convertNumberInput(userinput);
+    this.checkUserNumber(userNumber);
   }
 
   play() {
