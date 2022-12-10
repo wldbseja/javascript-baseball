@@ -13,11 +13,6 @@ const PRINT_ERROR_STRING = {
   ERROR_RANGE: '[ERROR] 1부터 9까지의 숫자가 아니므로 프로그램이 종료 됩니다.',
 };
 
-const PRINT_RESULT_COUNT = {
-  STRIKE_COUNT: '스트라이크',
-  BALL_COUNT: '볼',
-  BLANK: ' ',
-};
 module.exports = {
   NUMBER,
   PRINT_STRING,
