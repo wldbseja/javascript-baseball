@@ -70,10 +70,23 @@ class App {
     return countStrike;
   }
 
+  countBall(userNumber, computer) {
+    let countBall = 0;
+    for (let i = 0; i < userNumber.length; i++) {
+      if (
+        computer[i] !== userNumber[i] &&
+        computer.indexOf(userNumber[i]) !== -1
+      ) {
+        countBall++;
+      }
+    }
+  }
+
   callbackUserNumber(userinput) {
     const userNumber = this.convertNumberInput(userinput);
     this.checkUserNumber(userNumber);
     this.countStrike(userNumber, this.#computer);
+    this.countBall(userNumber, this.#computer);
   }
 
   play() {
