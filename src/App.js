@@ -60,9 +60,20 @@ class App {
     this.checkNumberRange(userNumber);
   }
 
+  countStrike(userNumber, computer) {
+    let countStrike = 0;
+    for (let i = 0; i < userNumber.length; i++) {
+      if (userNumber[i] === computer[i]) {
+        countStrike++;
+      }
+    }
+    return countStrike;
+  }
+
   callbackUserNumber(userinput) {
     const userNumber = this.convertNumberInput(userinput);
     this.checkUserNumber(userNumber);
+    this.countStrike(userNumber, this.#computer);
   }
 
   play() {
