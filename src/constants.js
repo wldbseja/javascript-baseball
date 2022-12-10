@@ -18,4 +18,9 @@ const PRINT_RESULT_COUNT = {
   BALL_COUNT: `${ballCount}볼`,
   BLANK: ' ',
 };
-module.exports = { NUMBER, PRINT_STRING, PRINT_ERROR_STRING };
+module.exports = {
+  NUMBER,
+  PRINT_STRING,
+  PRINT_ERROR_STRING,
+  PRINT_RESULT_COUNT,
+};
