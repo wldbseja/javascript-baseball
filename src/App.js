@@ -27,7 +27,7 @@ class App {
     );
   }
 
-  callbackUserNumber() {}
+  callbackUserNumber(userinput) {}
 
   play() {
     if (!this.#computer) {
@@ -35,6 +35,7 @@ class App {
     }
 
     this.generateRandomNumbers();
+    this.inputUserNumber();
   }
 }
 
