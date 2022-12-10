@@ -32,3 +32,13 @@ describe(' 에러 테스트 ', () => {
     expect(() => app.checkNumberRange([4, 5, 6])).not.toThrow();
   });
 });
+
+describe(' 기능 테스트 ', () => {
+  test('스트라이크 개수 테스트', () => {
+    const app = new App();
+
+    expect(app.countStrike([1, 2, 3], [1, 3, 4])).toEqual(1);
+    expect(app.countStrike([1, 2, 3], [1, 2, 4])).toEqual(2);
+    expect(app.countStrike([1, 2, 3], [1, 2, 3])).toEqual(3);
+  });
+});
