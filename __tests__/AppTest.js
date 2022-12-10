@@ -57,4 +57,12 @@ describe(' 기능 테스트 ', () => {
     expect(app.countBall([1, 2, 3], [4, 3, 2])).toEqual(2);
     expect(app.countBall([1, 2, 3], [2, 3, 1])).toEqual(3);
   });
+
+  test('볼 출력 테스트', () => {
+    const app = new App();
+
+    expect(app.printResultCount(0, 1)).toEqual('1볼');
+    expect(app.printResultCount(0, 2)).toEqual('2볼');
+    expect(app.printResultCount(0, 3)).toEqual('3볼');
+  });
 });
