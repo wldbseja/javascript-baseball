@@ -11,4 +11,14 @@ describe(' 에러 테스트 ', () => {
     expect(() => app.checkNumberCount([1, 2, 3])).not.toThrow();
     expect(() => app.checkNumberCount([4, 5, 6])).not.toThrow();
   });
+
+  test('사용자 입력 값 개수 테스트', () => {
+    const app = new App();
+
+    expect(() => app.checkNumberLength([1, 2, 3, 4])).toThrow();
+    expect(() => app.checkNumberLength([4, 5, 6, 7])).toThrow();
+
+    expect(() => app.checkNumberLength([1, 2, 3])).not.toThrow();
+    expect(() => app.checkNumberLength([4, 5, 6])).not.toThrow();
+  });
 });
