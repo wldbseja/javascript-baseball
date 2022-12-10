@@ -44,9 +44,20 @@ class App {
     }
   }
 
+  checkNumberRange(userNumber) {
+    for (let i = 0; i < userNumber.length; i++) {
+      if (!(userNumber[i] > 0 && userNumber[i] <= 9)) {
+        throw Error(
+          '[ERROR] 1부터 9까지의 숫자가 아니므로 프로그램이 종료 됩니다.'
+        );
+      }
+    }
+  }
+
   checkUserNumber(userNumber) {
     this.checkNumberCount(userNumber);
     this.checkNumberLength(userNumber);
+    this.checkNumberRange(userNumber);
   }
 
   callbackUserNumber(userinput) {
