@@ -98,12 +98,21 @@ class App {
     return resultString;
   }
 
+  strikeMethodCall(strikeCount) {
+    if (strikeCount === 3) {
+      this.gameRestart();
+    } else {
+      this.inputUserNumber();
+    }
+  }
+
   callbackUserNumber(userinput) {
     const userNumber = this.convertNumberInput(userinput);
     this.checkUserNumber(userNumber);
     const strikeCount = this.countStrike(userNumber, this.#computer);
     const ballCount = this.countBall(userNumber, this.#computer);
     this.printResultCount(strikeCount, ballCount);
+    this.strikeMethodCall(strikeCount);
   }
 
   play() {
