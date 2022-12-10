@@ -86,8 +86,8 @@ class App {
   callbackUserNumber(userinput) {
     const userNumber = this.convertNumberInput(userinput);
     this.checkUserNumber(userNumber);
-    this.countStrike(userNumber, this.#computer);
-    this.countBall(userNumber, this.#computer);
+    const strikeCount = this.countStrike(userNumber, this.#computer);
+    const ballCount = this.countBall(userNumber, this.#computer);
   }
 
   play() {
