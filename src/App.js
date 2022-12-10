@@ -19,7 +19,10 @@ class App {
   }
 
   play() {
-    this.printGameStart();
+    if (!this.#computer) {
+      this.printGameStart();
+    }
+
     this.generateRandomNumbers();
   }
 }
