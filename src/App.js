@@ -2,7 +2,9 @@ const MissionUtils = require('@woowacourse/mission-utils');
 
 class App {
   #computer;
-  constructor() {}
+  constructor() {
+    this.callbackUserNumber = this.callbackUserNumber.bind(this);
+  }
 
   printGameStart() {
     MissionUtils.Console.print('숫자 야구 게임을 시작합니다.');
@@ -24,6 +26,8 @@ class App {
       this.callbackUserNumber
     );
   }
+
+  callbackUserNumber() {}
 
   play() {
     if (!this.#computer) {
