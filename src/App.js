@@ -20,7 +20,6 @@ class App {
         this.#computer.push(number);
       }
     }
-    console.log(this.#computer);
   }
 
   inputUserNumber() {
@@ -114,6 +113,15 @@ class App {
       PRINT_STRING.GAME_RESTART,
       this.inputGameRestart
     );
+  }
+
+  inputGameRestart(inputRestart) {
+    if (inputRestart === '1') this.play();
+
+    if (inputRestart === '2') MissionUtils.Console.close();
+
+    if (inputRestart !== '1' && inputRestart !== '2')
+      throw Error('[Error] 알맞은 숫자가 아니므로 프로그램이 종료 됩니다.');
   }
 
   callbackUserNumber(userinput) {
