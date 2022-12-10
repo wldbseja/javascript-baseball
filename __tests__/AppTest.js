@@ -41,4 +41,12 @@ describe(' 기능 테스트 ', () => {
     expect(app.countStrike([1, 2, 3], [1, 2, 4])).toEqual(2);
     expect(app.countStrike([1, 2, 3], [1, 2, 3])).toEqual(3);
   });
+
+  test('볼 개수 테스트', () => {
+    const app = new App();
+
+    expect(app.countBall([1, 2, 3], [4, 3, 5])).toEqual(1);
+    expect(app.countBall([1, 2, 3], [4, 3, 2])).toEqual(2);
+    expect(app.countBall([1, 2, 3], [2, 3, 1])).toEqual(3);
+  });
 });
