@@ -5,6 +5,7 @@ class App {
   #computer;
   constructor() {
     this.callbackUserNumber = this.callbackUserNumber.bind(this);
+    this.inputGameRestart = this.inputGameRestart.bind(this);
   }
 
   printGameStart() {
