@@ -1,10 +1,5 @@
 const MissionUtils = require('@woowacourse/mission-utils');
-const {
-  NUMBER,
-  PRINT_STRING,
-  PRINT_ERROR_STRING,
-  PRINT_RESULT_COUNT,
-} = require('./constants');
+const { NUMBER, PRINT_STRING, PRINT_ERROR_STRING } = require('./constants');
 
 class App {
   #computer;
@@ -89,11 +84,25 @@ class App {
     return countBall;
   }
 
+  printResultCount(strikeCount, ballCount) {
+    let resultString;
+    const STRIKE_COUNT = `${strikeCount}스트라이크`;
+    const BALL_COUNT = `${ballCount}볼`;
+    const BLANK = ' ';
+    if (ballCount > 0) resultString = BALL_COUNT;
+    if (strikeCount > 0) resultString = STRIKE_COUNT;
+    if (ballCount > 0 && strikeCount > 0)
+      resultString = BALL_COUNT + BLANK + STRIKE_COUNT;
+    if (ballCount === 0 && strikeCount === 0) resultString = '낫싱';
+    MissionUtils.Console.print(resultString);
+  }
+
   callbackUserNumber(userinput) {
     const userNumber = this.convertNumberInput(userinput);
     this.checkUserNumber(userNumber);
     const strikeCount = this.countStrike(userNumber, this.#computer);
     const ballCount = this.countBall(userNumber, this.#computer);
+    this.printResultCount(strikeCount, ballCount);
   }
 
   play() {
