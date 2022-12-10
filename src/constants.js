@@ -14,8 +14,8 @@ const PRINT_ERROR_STRING = {
 };
 
 const PRINT_RESULT_COUNT = {
-  STRIKE_COUNT: `${strikeCount}스트라이크`,
-  BALL_COUNT: `${ballCount}볼`,
+  STRIKE_COUNT: '스트라이크',
+  BALL_COUNT: '볼',
   BLANK: ' ',
 };
 module.exports = {
