@@ -9,12 +9,12 @@ class App {
   }
 
   printGameStart() {
-    MissionUtils.Console.print('숫자 야구 게임을 시작합니다.');
+    MissionUtils.Console.print(PRINT_STRING.GAME_START);
   }
 
   generateRandomNumbers() {
     this.#computer = [];
-    while (this.#computer.length < 3) {
+    while (this.#computer.length < NUMBER) {
       const number = MissionUtils.Random.pickNumberInRange(1, 9);
       if (!this.#computer.includes(number)) {
         this.#computer.push(number);
@@ -24,7 +24,7 @@ class App {
 
   inputUserNumber() {
     MissionUtils.Console.readLine(
-      '숫자를 입력해주세요 : ',
+      PRINT_STRING.INPUT_NUMBER,
       this.callbackUserNumber
     );
   }
@@ -35,23 +35,21 @@ class App {
 
   checkNumberCount(userNumber) {
     const setUserNumber = new Set(userNumber);
-    if (setUserNumber.size < 3) {
-      throw Error('[ERROR] 숫자가 중복 되어 프로그램이 종료 됩니다.');
+    if (setUserNumber.size < NUMBER) {
+      throw Error(PRINT_ERROR_STRING.ERROR_DUPLE);
     }
   }
 
   checkNumberLength(userNumber) {
-    if (userNumber.length !== 3) {
-      throw Error('[ERROR] 3개의 숫자가 아니므로 프로그램이 종료 됩니다.');
+    if (userNumber.length !== NUMBER) {
+      throw Error(PRINT_ERROR_STRING.ERROR_LENGTH);
     }
   }
 
   checkNumberRange(userNumber) {
     for (let i = 0; i < userNumber.length; i++) {
       if (!(userNumber[i] > 0 && userNumber[i] <= 9)) {
-        throw Error(
-          '[ERROR] 1부터 9까지의 숫자가 아니므로 프로그램이 종료 됩니다.'
-        );
+        throw Error(PRINT_ERROR_STRING.ERROR_RANGE);
       }
     }
   }
@@ -100,7 +98,7 @@ class App {
   }
 
   strikeMethodCall(strikeCount) {
-    if (strikeCount === 3) {
+    if (strikeCount === NUMBER) {
       this.printGameRestart();
     } else {
       this.inputUserNumber();
@@ -121,7 +119,7 @@ class App {
     if (inputRestart === '2') MissionUtils.Console.close();
 
     if (inputRestart !== '1' && inputRestart !== '2')
-      throw Error('[Error] 알맞은 숫자가 아니므로 프로그램이 종료 됩니다.');
+      throw Error(PRINT_ERROR_STRING.EROOR_INPUT_GAME_RESTART);
   }
 
   callbackUserNumber(userinput) {
