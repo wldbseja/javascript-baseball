@@ -100,10 +100,15 @@ class App {
 
   strikeMethodCall(strikeCount) {
     if (strikeCount === 3) {
-      this.gameRestart();
+      this.printGameRestart();
     } else {
       this.inputUserNumber();
     }
+  }
+
+  printGameRestart() {
+    MissionUtils.Console.print(PRINT_STRING.GAME_OVER);
+    MissionUtils.Console.readLine(GAME_RESTART, this.inputGameRestart);
   }
 
   callbackUserNumber(userinput) {
