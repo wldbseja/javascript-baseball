@@ -80,6 +80,7 @@ class App {
         countBall++;
       }
     }
+    return countBall;
   }
 
   callbackUserNumber(userinput) {
