@@ -17,5 +17,4 @@ module.exports = {
   NUMBER,
   PRINT_STRING,
   PRINT_ERROR_STRING,
-  PRINT_RESULT_COUNT,
 };
