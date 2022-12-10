@@ -20,6 +20,7 @@ class App {
         this.#computer.push(number);
       }
     }
+    console.log(this.#computer);
   }
 
   inputUserNumber() {
@@ -109,7 +110,10 @@ class App {
 
   printGameRestart() {
     MissionUtils.Console.print(PRINT_STRING.GAME_OVER);
-    MissionUtils.Console.readLine(GAME_RESTART, this.inputGameRestart);
+    MissionUtils.Console.readLine(
+      PRINT_STRING.GAME_RESTART,
+      this.inputGameRestart
+    );
   }
 
   callbackUserNumber(userinput) {
