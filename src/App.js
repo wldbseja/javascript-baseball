@@ -30,6 +30,7 @@ class App {
   convertNumberInput(userinput) {
     return userinput.split('').map(Number);
   }
+
   checkNumberCount(userNumber) {
     const setUserNumber = new Set(userNumber);
     if (setUserNumber.size < 3) {
@@ -37,8 +38,15 @@ class App {
     }
   }
 
+  checkNumberLength(userNumber) {
+    if (userNumber.length !== 3) {
+      throw Error('[ERROR] 3개의 숫자가 아니므로 프로그램이 종료 됩니다.');
+    }
+  }
+
   checkUserNumber(userNumber) {
     this.checkNumberCount(userNumber);
+    this.checkNumberLength(userNumber);
   }
 
   callbackUserNumber(userinput) {
