@@ -95,6 +95,7 @@ class App {
       resultString = BALL_COUNT + BLANK + STRIKE_COUNT;
     if (ballCount === 0 && strikeCount === 0) resultString = '낫싱';
     MissionUtils.Console.print(resultString);
+    return resultString;
   }
 
   callbackUserNumber(userinput) {
